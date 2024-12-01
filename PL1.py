@@ -53,7 +53,7 @@ def main():
         
         response = connection.getresponse()
           
-        if response.status == 400:
+        if  str(response.status).startswith(("4","5")):
             print(f"Ошибка при скачивании: {response.status} {response.reason}")
             return
             
